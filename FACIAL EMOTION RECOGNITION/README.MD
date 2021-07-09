@@ -1,6 +1,9 @@
 # FACIAL EMOTION RECOGNITION
+
 Detects emotion of a person with images of his/her face (Can be used with webcam).
+
 Classifies emotion into 6   classes based on images.
+
 Uses convolutional neural networks and tensorflow.
 
 
