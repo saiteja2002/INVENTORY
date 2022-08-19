@@ -43,7 +43,7 @@ input_sequences = np.array(pad_sequences(input_sequences, maxlen=max_sequence_le
 data = open('rock.txt').read()
 corpus = data.lower().split("\n")
 def lastWord(string):
-    newstring = ""
+    newstring = ""    
     length = len(string)
     for i in range(length-1, 0, -1):
         if(string[i] == " "):
