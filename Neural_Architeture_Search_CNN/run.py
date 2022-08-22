@@ -27,15 +27,15 @@ validation_generator = validation_datagen.flow_from_directory(
 
 main = basemodel_architeture_search(train_generator, validation_generator)
 #running the search
-data = main.search()
+data = main.basemodelsearch()
 #getting the top 5 architetures for this data
 n=6
-data_file = 'model_data_generated_sofar.pkl'
-with open(data_file, 'rb') as f:
+data_model_file = 'model_data_generated_sofar.pkl'
+with open(data_model_file, 'rb') as f:
     data = pickle.load(f)
-val_accs = [item[1] for item in data]
-sorted_idx = np.argsort(val_accs)[::-1]
-data = [data[x] for x in sorted_idx]
+val_acc= [i[1] for i in data]
+sort_ = np.argsort(val_acc)[::-1]
+data = [data[x] for x in sort_]
 search_space = Generate_Sample_Space_and_Create_and_train_model()
 for seq_data in data[:n]:
     print('Architecture', search_space.id_to_config(seq_data[0]),"        ",'Validation Accuracy:', seq_data[1])
