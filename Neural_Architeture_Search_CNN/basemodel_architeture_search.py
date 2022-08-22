@@ -81,7 +81,7 @@ class basemodel_architeture_search(RNN_model_createtraindata_andfit):
         return loss
 
 
-    def search(self):
+    def basemodelsearch(self):
         """
         This function is the main overflow of entire NAS. This functino do the following thigs.
             1) rnnmodel generates sample architectures.
